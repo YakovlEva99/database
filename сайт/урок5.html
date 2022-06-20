@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <title>ur</title>
+</head>
+<body>
+
+
+<header class="header">
+    <div class="container">
+                <nav class="nav">
+                <a class="nav__link " href="../сайт/index.html">Главная</a>
+                <a class="nav__link " href="../сайт/subd.html">СУБД</a>
+                <a class="nav__link active" href="../сайт/temy1.html">Уроки</a>
+				 <a class="btn" href="../сайт/test.html">Тест</a>
+               
+            </nav>
+        </div>
+    
+</header>
+
+<div class="sidenav">
+<button class="dropdown-btn">CУБД</a> 
+      </button>
+  <div class="dropdown-container">
+    <a href="../сайт/subd.html ">Oracle</a>
+    <a href="../сайт/subd.html #t2">MySQL</a>
+    <a href="../сайт/subd.html #t3">Microsoft SQL Server</a>
+  </div>
+  <a href="../сайт/урок1.html">Урок 1.Представления</a>
+  <a href="../сайт/урок2.html">Урок 2.Триггеры</a>
+  <a href="../сайт/урок3.html">Урок 3.Хранимые процедуры</a>
+   <a href="../сайт/урок4.html">Урок 4.Оператор select</a>
+   <a href="../сайт/урок5.html">Урок 5.Оператор insert</a>
+    <a href="../сайт/урок6.html">Урок 6.Команды создания таблиц и БД</a>
+	<a href="../сайт/урок7.html">Урок 7.Управление пользователями</a>
+  
+  
+  
+  
+</div>
+<script>
+/* Цикл через все кнопки выпадающего списка для переключения между скрытием и отображением его выпадающего содержимого - это позволяет пользователю иметь несколько выпадающих списков без каких-либо конфликтов */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+<article class="main">
+<div id= "t2" >
+<h2>Оператор insert</h2>
+  <h3>КОМАНДЫ МОДИФИКАЦИИ ЯЗЫКА DML</h3>
+
+<p>Значения могут быть помещены и удалены из полей, тремя командами языка
+DML (Язык Манипулирования Данными):<br>
+INSERT (ВСТАВИТЬ),<br>
+UPDATE (МОДИФИЦИРОВАТЬ),<br>
+DELETE (УДАЛИТЬ).<br></p>
+<h3>ВВОД ЗНАЧЕНИЙ</h3>
+<p>Все строки в SQL вводятся с использованием команды модификации INSERT.
+Так, например, чтобы ввести строку в таблицу Продавцов, вы можете использовать следующее условие:<br>
+INSERT INTO Salespeople<br>
+VALUES (1001, 'Peel', 'London', .12);<br>
+Команды DML не производят никакого вывода, но ваша программа должна дать
+вам некоторое подтверждение того, что данные были использованы.
+Имя таблицы (в нашем случае — Salespeople (Продавцы)), должно быть предварительно определено в команде CREATE TABLE (см. Главу 17), а каждое значение
+пронумерованное в предложении значений, должно совпадать с типом данных столбца, в который оно вставляется. В ANSI, эти значения не могут составлять выражений,
+что означает что 3 — это доступно, а выражение 2+1— нет. Значения, конечно же,
+вводятся в таблицу в поименном порядке, поэтому первое значение с именем, автоматическми попадает в столбец 1, второе в столбец 2, и так далее.</p>
+<h3>ВСТАВКА ПУСТЫХ УКАЗАТЕЛЕЙ (NULL)</h3>
+<p>Если вам нужно ввести пустое значение (NULL), вы вводите его точно также как
+и обычное значение. Предположим, что еще не имелось поля city для мистера Peel.
+Вы можете вставить его строку со значением=NULL в это поле, следующим образом:<br>
+INSERT INTO Salespeople<br>
+VALUES (1001, 'Peel', NULL, .12);<br>
+Так как значение NULL — это специальный маркер, а не просто символьное значение, он не включяется в одиночные кавычки.</p>
+<h3>ИМЕНОВАНИЕ СТОЛБЦА ДЛЯ ВСТАВКИ (INSERT)</h3>
+<p>Вы можете также указывать столбцы, куда вы хотите вставить значение имени.
+Это позволяет вам вставлять имена в любом порядке. Предположим, что вы берете
+значения для таблицы Заказчиков из отчета, выводимого на принтер, который помещает их в таком порядке: city, cname, и cnum, и для упрощения, вы хотите ввести
+значения в том же порядке:<br>
+INSERT INTO Customers (city, cnamе, cnum)<br>
+VALUES ('London', 'Honman', 2001);<br></p>
+<p>Обратите внимание, что столбцы rating и snum — отсутствуют. Это значит, что
+эти строки автоматически установлены в значение по умолчанию. По умолчанию может быть введено или значение NULL или другое значение, определяемое как значение по умолчанию. Если ограничение запрещает использование значения NULL в
+данном столбце, и этот столбец не установлен как по умолчанию, этот столбец должен быть обеспечен значением для любой команды INSERT, которая относится к таблице (смотри Главу 18 для информации об ограничениях на NULL и на "по
+умолчанию").</p>
+<h3>ВСТАВКА РЕЗУЛЬТАТОВ ЗАПРОСА</h3>
+<p>Вы можете также использовать команду INSERT чтобы получать или выбирать
+значения из одной таблицы и помещать их в другую, чтобы использовать их вместе с
+запросом. Чтобы сделать это, вы просто заменяете предложение VALUES (из предыдущего примера) на соответствующий запрос:<br>
+INSERT INTO Londonstaff<br>
+SELECT *<br>
+FROM Salespeople<br>
+WHERE city = 'London';<br></p>
+
+<p>Здесь выбираются все значения произведенные запросом — то-есть все строки
+из таблицы Продавцов со значениями city = "London" — и помещаются в таблицу называемую Londonstaff. Чтобы это работало, таблица Londonstaff должна отвечать
+следующим условиям:<br>
+* Она должна уже быть создана командой CREATE TABLE.<br>
+* Она должна иметь четыре столбца которые совпадают с таблицей Продавцов в
+терминах типа данных; то-есть первый, второй, и так далее, столбцы каждой таблицы,
+должны иметь одинаковый тип данных (причем они не должны иметь одинаковых
+имен).<br></p>
+<p>Общее правило то, что всталяемые столбцы таблицы, должны совпадать со
+столбцами выводимыми подзапросом, в данном случае, для всей таблицы Продавцов.
+Londonstaff — это теперь независимая таблица, которая получила некоторые
+значения из таблицы Продавцов (Salespeople).</p>
+</article>
+  <div class ="test">
+<script type="text/javascript">
+var subtitle = "Этот тест позволяет оценить Ваши знания";
+var questions=[
+{
+	text: "Команда SELECT..?",
+	answers: ["не меняет информацию в таблицах ",
+		  "меняет информацию в таблицах",
+		  "удаляет информацию в таблицах",
+		  "заменяет инфо в таблицах"],
+	correctAnswer: 0
+},
+{
+	text: "Из какой таблицы будет происходить выборка в запросе SELECT snum, sname, sity, comm FROM Salespeople ?",
+	answers: ["snum",
+		  "sname",
+		  "sity",
+		  "Salespeople"],
+	correctAnswer: 3
+},
+{
+	text: "С помощью какой команды выбираются данные и помещаются в представление?",
+	answers: ["SELECT",
+		  "CREATE VIEW",
+		  "WHERE"],
+	correctAnswer: 0
+}
+];
+
+var yourAns = new Array;
+var score = 0;
+
+function Engine(question, answer) {yourAns[question]=answer;}
+
+function Score(){
+   var answerText = "Результаты:\n";
+   for(var i = 0; i < yourAns.length; ++i){
+	var num = i+1;
+	answerText=answerText+"\n    Вопрос №"+ num +"";
+	if(yourAns[i]!=questions[i].correctAnswer){
+	    answerText=answerText+"\n    Правильный ответ: " +
+		questions[i].answers[questions[i].correctAnswer] + "\n";
+	  }
+        else{
+	    answerText=answerText+": Верно! \n";
+	    ++score;
+	    }
+       }
+
+   answerText=answerText+"\nВсего правильных ответов: "+score+"\n";
+
+   alert(answerText);
+   yourAns = [];
+   score = 0;
+   clearForm("quiz");
+}
+function clearForm(name) {
+   var f = document.forms[name];
+   for(var i = 0; i < f.elements.length; ++i) {
+	if(f.elements[i].checked)
+		f.elements[i].checked = false;
+}
+}
+
+</script>
+
+<style>
+span.quest {font-weight: bold;}
+</style>
+
+<h1><script>document.write(title)</script></h1>
+<h2><script>document.write(subtitle)</script></h2>
+
+<form name="quiz">
+<ol>
+<script>
+for(var q=0; q<questions.length; ++q) {
+   var question = questions[q];
+   var idx = 1 + q;
+
+   document.writeln('<li><span class="quest">' + question.text + '</span><br/>');
+   for(var i in question.answers) {
+	document.writeln('<input type=radio name="q' + idx + '" value="' + i +
+	'" onClick="Engine(' + q + ', this.value)">' + question.answers[i] + '<br/>');
+}
+}
+</script>
+</ol>
+<input type="button" onClick="Score()" value="Проверить результаты" /> 
+</form>
+</div>
+ 
+     
+</body>
+</html>
