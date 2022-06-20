@@ -12,10 +12,10 @@
 <header class="header">
     <div class="container">
                 <nav class="nav">
-                <a class="nav__link " href="../сайт/index.html">Главная</a>
-                <a class="nav__link " href="../сайт/subd.html">СУБД</a>
-                <a class="nav__link active" href="../сайт/temy1.html">Уроки</a>
-				 <a class="btn" href="../сайт/test.html">Тест</a>
+                <a class="nav__link " href="index.html">Главная</a>
+                <a class="nav__link " href="subd.html">СУБД</a>
+                <a class="nav__link active" href="temy1.html">Уроки</a>
+				 <a class="btn" href="test.html">Тест</a>
                
             </nav>
         </div>
@@ -27,13 +27,13 @@
     <i class=" fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="../сайт/subd.html #t1">Oracle</a>
-    <a href="../сайт/subd.html #t2">MySQL</a>
-    <a href="../сайт/subd.html #t3">Microsoft SQL Server</a>
+    <a href="subd.html #t1">Oracle</a>
+    <a href="subd.html #t2">MySQL</a>
+    <a href="subd.html #t3">Microsoft SQL Server</a>
   </div>
-  <a href="../сайт/урок1.html">Урок 1.Представления</a>
-  <a href="../сайт/урок2.html">Урок 2.Триггеры</a>
-  <a href="../сайт/урок3.html"">Урок 3.Хранимые процедуры</a>
+  <a href="урок1.html">Урок 1.Представления</a>
+  <a href="урок2.html">Урок 2.Триггеры</a>
+  <a href="урок3.html"">Урок 3.Хранимые процедуры</a>
   
   
   
@@ -61,7 +61,7 @@ for (i = 0; i < dropdown.length; i++) {
   <h2>Представления в SQL</h2>
   <h3>Общее понятие</h3>
   <p>Представления нужны для того, чтобы упростить работу с базой данных и ускорить время ответа сервера. Так как представление — это уже результат некой выборки данных с помощью SELECT, то, очевидно, в следующий раз вместо запроса к нескольким таблицам достаточно просто обратиться к уже созданному представлению. Работу этого объекта характеризует следующее изображение:</p>
-  <p><img src="../сайт/assets/images/view-sql.jpg" alt="half left" ></p>
+  <p><img src="images/view-sql.jpg" alt="half left" ></p>
   <p>На изображении — простой вариант использования представления, когда объединяются данные по идентификатору. Но, помимо этого, в представлениях могут быть разные виды условий и ограничений, также вложенные запросы и группировки по каким либо полям. Об этом будет сказано чуть позже. </p>
   <h4> Создание представления в SQL</h4>
   <p>
@@ -82,7 +82,7 @@ WHERE orders.cnum = customers.cnum</p>
 
 Теперь представление практически является таблицей, если вы используете phpmyadmin, то слева в меню можно увидеть такую картину:</p>
  </p> 
-   <p><img src="../сайт/assets/images/view-sql-tree.jpg" alt="" class="half right"></p> 
+   <p><img src="images/view-sql-tree.jpg" alt="" class="half right"></p> 
 </article>
 <article class="main">
 <div id= "t2" >
@@ -137,10 +137,10 @@ DELIMITER ;<br>
 
 <p>1.Через консоль SQL запросов</p>
 <p>Также как и все запросы SELECT, INSERT и т.д код создания хранимых процедур можно прописывать на вкладке SQL.</p>
-  <p><img src="../сайт/assets/images/sql-query.png" alt="half left" ></p>
+  <p><img src="images/sql-query.png" alt="half left" ></p>
   <p>2.Через специальную вкладку процедуры</p>
 <p>Второй способ возможен тогда, когда мы выбрали определенную БД, и конкретно для нее появляется вкладка процедур, как на скриншоте ниже. </p>
-  <p><img src="../сайт/assets/images/procedure_menu.png" alt="half left" ></p>
+  <p><img src="images/procedure_menu.png" alt="half left" ></p>
   <h3> Создание процедур в SQL</h3>
   <p>
  тобы создать процедуру необходимо воспользоваться оператором <b>CREATE PROCEDURE</b>. После оператора следует указать имя процедуры, а затем в круглых скобках аргументы, если они имеются, вместе с указанием типа данных каждого аргумента. Примерно это будет выглядеть так: </p>  
