@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <title>ur</title>
+</head>
+<body>
+
+
+<header class="header">
+    <div class="container">
+                <nav class="nav">
+                <a class="nav__link " href="../сайт/index.html">Главная</a>
+                <a class="nav__link " href="../сайт/subd.html">СУБД</a>
+                <a class="nav__link " href="../сайт/урок1.html">Уроки</a>
+				 <a class="btn active" href="../сайт/test.html">Тест</a>
+               
+            </nav>
+        </div>
+    
+</header>
+
+     <div class ="test">
+<script type="text/javascript">
+var subtitle = "Этот тест позволяет оценить Ваши знания";
+var questions=[
+{ 
+text: "Для чего нужны представления?",
+	answers: ["чтобы упростить работу с базой данных ",
+		  "реализации сложной бизнес-логики",
+		  "для обеспечения целостности данных",
+		  " нет правильного ответа  "],
+	correctAnswer: 0 
+},
+{
+	text: "Создание представления осуществляется командой?",
+	answers: ["CREATE VIEW",
+		  "SELECT",
+		  "SHOW",
+		  "DROP"],
+	correctAnswer: 0
+},
+{
+	text: "С помощью какой команды выбираются данные и помещаются в представление?",
+	answers: ["SELECT",
+		  "CREATE VIEW",
+		  "WHERE",
+		  "DROP"],
+	correctAnswer: 0
+},
+{
+	text: "Что такое триггеры?",
+	answers: ["ввод данных ",
+		  "обработчики событий",
+		  "удаление данных",
+		  "Функция"],
+	correctAnswer: 1
+},
+{
+	text: "Оператор для создания триггеров?",
+	answers: ["CREATE TRIGGER",
+		  "SELECT TRIGGER ",
+		  "AFTER TRIGGER",
+		  "drop TRIGGER"],
+	correctAnswer: 0
+},
+{
+	text: "С помощью какой команды можно приостановить триггер?",
+	answers: ["DISABLE TRIGGER",
+		  "ENABLE TRIGGER",
+		  "CREATE TRIGGER",
+		  "DROP TRIGGER"],
+	correctAnswer: 0
+},
+{
+	text: "Каким оператором необходимо воспользоваться чтобы создать процедуру?",
+	answers: ["SELECT ",
+		  "CREATE PROCEDURE",
+		  "CREATE VIEW",
+		  "SELECT PROCEDURE"],
+	correctAnswer: 1 
+},
+{
+	text: "Какие действия могут выполнять хранимые процедуры над данными автоматически?",
+	answers: ["вывод данных, изменение",
+		  "удаление",
+		  "изменение",
+		  "вывод данных, изменение,удаление"],
+	correctAnswer: 3
+},
+{
+	text: "Является ли процедура сущностью SQL?",
+	answers: ["Да, сущность можно создать, а затем вызывать",
+		  "Нет",
+		  "Да, сущность можно создать,но вызвать нельзя"],
+	correctAnswer: 0
+},
+{
+	text: "Команда SELECT..?",
+	answers: ["не меняет информацию в таблицах ",
+		  "меняет информацию в таблицах",
+		  "удаляет информацию в таблицах",
+		  "заменяет инфо в таблицах"],
+	correctAnswer: 0
+},
+{
+	text: "Из какой таблицы будет происходить выборка в запросе SELECT snum, sname, sity, comm FROM Salespeople ?",
+	answers: ["snum",
+		  "sname",
+		  "sity",
+		  "Salespeople"],
+	correctAnswer: 3
+},
+{
+	text: "С помощью какой команды выбираются данные и помещаются в представление?",
+	answers: ["SELECT",
+		  "CREATE VIEW",
+		  "WHERE"],
+	correctAnswer: 0
+}
+];
+
+var yourAns = new Array;
+var score = 0;
+
+function Engine(question, answer) {yourAns[question]=answer;}
+
+function Score(){
+   var answerText = "Результаты:\n";
+   for(var i = 0; i < yourAns.length; ++i){
+	var num = i+1;
+	answerText=answerText+"\n    Вопрос №"+ num +"";
+	if(yourAns[i]!=questions[i].correctAnswer){
+	    answerText=answerText+"\n    Правильный ответ: " +
+		questions[i].answers[questions[i].correctAnswer] + "\n";
+	  }
+        else{
+	    answerText=answerText+": Верно! \n";
+	    ++score;
+	    }
+       }
+
+   answerText=answerText+"\nВсего правильных ответов: "+score+"\n";
+
+   alert(answerText);
+   yourAns = [];
+   score = 0;
+   clearForm("quiz");
+}
+function clearForm(name) {
+   var f = document.forms[name];
+   for(var i = 0; i < f.elements.length; ++i) {
+	if(f.elements[i].checked)
+		f.elements[i].checked = false;
+}
+}
+
+</script>
+
+<style>
+
+</style>
+
+<h1><script>document.write(title)</script></h1>
+<h2><script>document.write(subtitle)</script></h2>
+
+<form name="quiz">
+<ol>
+<script>
+for(var q=0; q<questions.length; ++q) {
+   var question = questions[q];
+   var idx = 1 + q;
+
+   document.writeln('<li><span class="quest">' + question.text + '</span><br/>');
+   for(var i in question.answers) {
+	document.writeln('<input type=radio name="q' + idx + '" value="' + i +
+	'" onClick="Engine(' + q + ', this.value)">' + question.answers[i] + '<br/>');
+}
+}
+</script>
+</ol>
+<input type="button" onClick="Score()" value="Проверить результаты" /> 
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <title>ur</title>
+</head>
+<body>
+
+
+<header class="header">
+    <div class="container">
+                <nav class="nav">
+                <a class="nav__link " href="../сайт/index.html">Главная</a>
+                <a class="nav__link " href="../сайт/subd.html">СУБД</a>
+                <a class="nav__link active" href="../сайт/temy1.html">Уроки</a>
+				 <a class="btn" href="../сайт/test.html">Тест</a>
+               
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="sidenav">
+<button class="dropdown-btn"> CУБД
+     </button>
+  <div class="dropdown-container">
+    <a href="../сайт/subd.html ">Oracle</a>
+    <a href="../сайт/subd.html #t2">MySQL</a>
+    <a href="../сайт/subd.html #t3">Microsoft SQL Server</a>
+  </div>
+  <a href="../сайт/урок1.html">Урок 1.Представления</a>
+  <a href="../сайт/урок2.html">Урок 2.Триггеры</a>
+  <a href="../сайт/урок3.html">Урок 3.Хранимые процедуры</a>
+   <a href="../сайт/урок3.html">Урок 4.Оператор select</a>
+   <a href="../сайт/урок3.html">Урок 5.Оператор insert</a>
+    <a href="../сайт/урок3.html">Урок 6.Команды создания таблиц и БД</a>
+	<a href="../сайт/урок3.html">Урок 7.Управление пользователями</a>
+  
+  
+  
+</div>
+<script>
+
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+ <article class="main">
+ <div id= "t3" >
+  <h2>Управление пользователями</h2>
+  <h3>Виды пользователей базы данных</h3>
+  <p> Пользователи с доступом только к одной базе данных. Если вы управляете тем или иным сайтом совместно с другими людьми и хотите предоставить им доступ к его базе данных, вам нужно создать для них отдельные учетные записи. Каждая из них будет иметь доступ только к одной базе данных. В этом случае вам нужно сначала создать базу данных, а затем ― учетные записи пользователей.</p>
+  <p> Универсальные пользователи с доступом ко всем базам данных.
+Универсальные пользователи имеют доступ не только ко всем уже существующим базам данных, но и ко всем вновь создаваемым.</p>
+ <p>Если вы планируете установить на своем сайте несколько веб-приложений, рекомендуем создать одного универсального пользователя и затем назначать его для всех устанавливаемых приложений. В этом случае вам нужно сначала создать такого пользователя и затем указывать его при установке приложений.</p>
+<h3>Операции с пользователями базы данных</h3>
+<p>Можно создать, обновить или удалить пользователя базы данных на странице Сайты и домены > Базы данных > Управление пользователями.
+
+При создании пользователя базы необходимо указать его логин и пароль, а также имя базы данных, к которой он будет иметь доступ. Чтобы создать универсального пользователя, в меню База данных выберите вариант Все.</p>
+<h3>Права пользователя базы данных</h3>
+<p>сли вы используете MySQL или Microsoft SQL Server, вы можете управлять правами пользователей базы данных через интерфейс Plesk, чтобы разрешить или запретить им выполнение операций над структурой и данными таблиц. Для MySQL это такие права, как выполнять запросы, создавать записи, создавать, удалять и т.д., а для Microsoft SQL Server эти права определяются ролями на уровне базы данных, такими как db_ddladmin, db_datawriter, и т.д.
+
+Чтобы помочь вам в предоставлении прав, в Plesk используются шаблоны наборов прав, называемые ролями. При создании каждой учетной записи пользователя базы данных, она получает набор прав по умолчанию. Этот набор прав соответствует роли Чтение и запись. Другие существующие роли ― Только чтение и Только запись. Кроме того, в MySQL можно создать Персональную роль с пользовательским набором прав.</p>
+<h4>Чтобы изменить права пользователя базы данных MySQL:</h4>
+<p>Перейдите на страницу Сайты и домены > Базы данных > Управление пользователями и нажмите имя пользователя базы данных.<br>
+
+По умолчанию вновь созданные пользователи баз данных имеют роль Чтение и запись. Вы можете просмотреть и изменить права, входящие в эту роль.<br>
+
+Чтобы разрешить только чтение или только запись, выберите соответствующую роль (Только чтение или Только запись).<br>
+
+Чтобы добавить или удалить права в уже выбранной для пользователя роли, поставьте или снимите соответствующие флажки(Выполнить запрос, Создать запись, Обновить, и т. д.).<br>
+
+Обратите внимание, что при изменении набора прав роль становится Персональной.</p>
+
+   
+</article>
+     <div class ="test">
+<script type="text/javascript">
+var subtitle = "Этот тест позволяет оценить Ваши знания";
+var questions=[
+{
+	text: "Для чего нужны представления?:",
+	answers: ["чтобы упростить работу с базой данных ",
+		  "ускорить время ответа сервера",
+		  "все перечисленное"],
+	correctAnswer: 2 
+},
+{
+	text: "Создание представления осуществляется командой:",
+	answers: ["CREATE VIEW",
+		  "SELECT",
+		  "все перечисленное"],
+	correctAnswer: 0
+},
+{
+	text: "С помощью какой команды выбираются данные и помещаются в представление",
+	answers: ["SELECT",
+		  "CREATE VIEW",
+		  "WHERE"],
+	correctAnswer: 0
+}
+];
+
+var yourAns = new Array;
+var score = 0;
+
+function Engine(question, answer) {yourAns[question]=answer;}
+
+function Score(){
+   var answerText = "Результаты:\n";
+   for(var i = 0; i < yourAns.length; ++i){
+	var num = i+1;
+	answerText=answerText+"\n    Вопрос №"+ num +"";
+	if(yourAns[i]!=questions[i].correctAnswer){
+	    answerText=answerText+"\n    Правильный ответ: " +
+		questions[i].answers[questions[i].correctAnswer] + "\n";
+	  }
+        else{
+	    answerText=answerText+": Верно! \n";
+	    ++score;
+	    }
+       }
+
+   answerText=answerText+"\nВсего правильных ответов: "+score+"\n";
+
+   alert(answerText);
+   yourAns = [];
+   score = 0;
+   clearForm("quiz");
+}
+function clearForm(name) {
+   var f = document.forms[name];
+   for(var i = 0; i < f.elements.length; ++i) {
+	if(f.elements[i].checked)
+		f.elements[i].checked = false;
+}
+}
+</script>
+
+<style>
+span.quest {font-weight: bold;}
+</style>
+
+<h1><script>document.write(title)</script></h1>
+<h2><script>document.write(subtitle)</script></h2>
+
+<form name="quiz">
+<ol>
+<script>
+for(var q=0; q<questions.length; ++q) {
+   var question = questions[q];
+   var idx = 1 + q;
+
+   document.writeln('<li><span class="quest">' + question.text + '</span><br/>');
+   for(var i in question.answers) {
+	document.writeln('<input type=radio name="q' + idx + '" value="' + i +
+	'" onClick="Engine(' + q + ', this.value)">' + question.answers[i] + '<br/>');
+}
+}
+</script>
+</ol>
+<input type="button" onClick="Score()" value="Проверить результаты" /> 
+</form>
+</div>
+</body>
+</html>

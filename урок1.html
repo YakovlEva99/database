@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <title>ur</title>
+</head>
+<body>
+
+
+<header class="header">
+    <div class="container">
+                <nav class="nav">
+                <a class="nav__link " href="../сайт/index.html">Главная</a>
+                <a class="nav__link " href="../сайт/subd.html">СУБД</a>
+                <a class="nav__link active" href="../сайт/temy1.html">Уроки</a>
+				 <a class="btn" href="../сайт/test.html">Тест</a>
+               
+            </nav>
+        </div>
+    
+	
+</header>
+
+<div class="sidenav">
+<button class="dropdown-btn"> CУБД</a> 
+    </button>
+  <div class="dropdown-container">
+    <a href="../сайт/subd.html ">Oracle</a>
+    <a href="../сайт/subd.html #t2">MySQL</a>
+    <a href="../сайт/subd.html #t3">Microsoft SQL Server</a>
+  </div>
+  <a href="../сайт/урок1.html">Урок 1.Представления</a>
+  <a href="../сайт/урок2.html">Урок 2.Триггеры</a>
+  <a href="../сайт/урок3.html">Урок 3.Хранимые процедуры</a>
+   <a href="../сайт/урок4.html">Урок 4.Оператор select</a>
+   <a href="../сайт/урок5.html">Урок 5.Оператор insert</a>
+    <a href="../сайт/урок6.html">Урок 6.Команды создания таблиц и БД</a>
+	<a href="../сайт/урок7.html">Урок 7.Управление пользователями</a>
+  
+  
+  
+  
+  
+</div>
+<script>
+
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+<article class="main">
+<div id= "t1" >
+ <h1>SQL</h1>
+<p>SQL — это язык программирования, используемый в большинстве реляционных баз данных для запроса, обработки и определения данных, а также контроля доступа.</p>
+  <h2>Представления в SQL</h2>
+  <h3>Общее понятие</h3>
+  <p>Представления нужны для того, чтобы упростить работу с базой данных и ускорить время ответа сервера. Так как представление — это уже результат некой выборки данных с помощью SELECT, то, очевидно, в следующий раз вместо запроса к нескольким таблицам достаточно просто обратиться к уже созданному представлению. Работу этого объекта характеризует следующее изображение:</p>
+  <p><img src="../сайт/assets/images/view-sql.jpg" ></p>
+  <p>На изображении — простой вариант использования представления, когда объединяются данные по идентификатору. Но, помимо этого, в представлениях могут быть разные виды условий и ограничений, также вложенные запросы и группировки по каким либо полям. Об этом будет сказано чуть позже. </p>
+  <h4> Создание представления в SQL</h4>
+  <p>
+  Создание представления осуществляется командой <b>CREATE VIEW name_view
+as:</b> </p>  
+  </p>
+   <p>
+ Где <b>name_view</b> — имя, которое задает пользователь при создании. После ключевого слова as идет код запроса SELECT, данные которого и поместятся в представление. Чтобы легче понять разберем простой пример, иллюстрация которого была представлена выше.
+  </p>
+  
+  <p>CREATE VIEW info_order
+AS SELECT onum, amt, cname<br>
+FROM orders, customers<br>
+WHERE orders.cnum = customers.cnum</p>
+
+  
+  <p>С помощью SELECT выбираются данные и помещаются в представление. Еще раз повторим, что когда данные в исходных таблицах изменятся, то они поменяются и в представлении.
+
+Теперь представление практически является таблицей, если вы используете phpmyadmin, то слева в меню можно увидеть такую картину:</p>
+ 
+   <p><img src="../сайт/assets/images/view-sql-tree.jpg" alt=""></p> 
+</article>
+ 
+<div class ="test">
+<script type="text/javascript">
+var subtitle = "Этот тест позволяет оценить Ваши знания";
+var questions=[
+{
+	text: "Для чего нужны представления?",
+	answers: ["чтобы упростить работу с базой данных ",
+		  "реализации сложной бизнес-логики",
+		  "для обеспечения целостности данных",
+		  " нет правильного ответа  "],
+	correctAnswer: 0 
+},
+{
+	text: "Создание представления осуществляется командой?",
+	answers: ["CREATE VIEW",
+		  "SELECT",
+		  "SHOW",
+		  "DROP"],
+	correctAnswer: 0
+},
+{
+	text: "С помощью какой команды выбираются данные и помещаются в представление?",
+	answers: ["SELECT",
+		  "CREATE VIEW",
+		  "WHERE",
+		  "DROP"],
+	correctAnswer: 0
+}
+];
+
+var yourAns = new Array;
+var score = 0;
+
+function Engine(question, answer) {yourAns[question]=answer;}
+
+function Score(){
+   var answerText = "Результаты:\n";
+   for(var i = 0; i < yourAns.length; ++i){
+	var num = i+1;
+	answerText=answerText+"\n    Вопрос №"+ num +"";
+	if(yourAns[i]!=questions[i].correctAnswer){
+	    answerText=answerText+"\n    Правильный ответ: " +
+		questions[i].answers[questions[i].correctAnswer] + "\n";
+	  }
+        else{
+	    answerText=answerText+": Верно! \n";
+	    ++score;
+	    }
+       }
+
+   answerText=answerText+"\nВсего правильных ответов: "+score+"\n";
+
+   alert(answerText);
+   yourAns = [];
+   score = 0;
+   clearForm("quiz");
+}
+function clearForm(name) {
+   var f = document.forms[name];
+   for(var i = 0; i < f.elements.length; ++i) {
+	if(f.elements[i].checked)
+		f.elements[i].checked = false;
+}
+}
+</script>
+
+<style>
+
+</style>
+
+<h1><script>document.write(title)</script></h1>
+<h2><script>document.write(subtitle)</script></h2>
+
+<form name="quiz">
+<ol>
+<script>
+for(var q=0; q<questions.length; ++q) {
+   var question = questions[q];
+   var idx = 1 + q;
+
+   document.writeln('<li><span class="quest">' + question.text + '</span><br/>');
+   for(var i in question.answers) {
+	document.writeln('<input type=radio name="q' + idx + '" value="' + i +
+	'" onClick="Engine(' + q + ', this.value)">' + question.answers[i] + '<br/>');
+}
+}
+</script>
+</ol>
+<input type="button" onClick="Score()" value="Проверить результаты" > 
+</form>
+</div>
+     
+</body>
+</html>
